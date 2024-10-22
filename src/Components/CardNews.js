@@ -34,7 +34,7 @@ class CardNews extends HTMLElement{
         cardRight.setAttribute("class", "card__right");
 
         const newsImage = document.createElement("img");
-        newsImage.src = this.getAttribute("photo") || "assets/default-photo.png"
+        newsImage.src = this.getAttribute("photo") || "assets/default-photo.jpg"
         newsImage.alt = "Imagem da notícia"
 
         cardRight.appendChild(newsImage)
@@ -66,9 +66,11 @@ class CardNews extends HTMLElement{
             justify-content: center;
             padding-left: 10px;
         }
+
         .card__left > span {
             font-weight: 400;
         }
+
         .card__left > a {
             margin-top: 15px;
             font-size: 25px;
@@ -76,8 +78,16 @@ class CardNews extends HTMLElement{
             text-decoration: none;
             font-weight: bold;
         }
+
         .card__left > p {
             color: rgb(70, 70, 70);
+        }
+
+        .card__right img {
+            max-width: 300px;
+            max-height: 150px;  
+            object-fit: cover;
+            border-radius: 10px;
         }
         `
         return style;
